@@ -5,7 +5,7 @@ In questa cartella si ha la configurazione per il deployment ed i servizi di un'
 Il deployment crea 2 repliche di pods con un container di Hello-World. Successivamente il Service racchiude tutti i pods e li espone con ClusterIP. Infine l'Ingress espone il servizio verso l'esterno sempre su porta 80. 
 La contenuta in affinity evita che i pods vengano creati sullo stesso nodo al momento del deployment. Da notare che con ```requiredDuringSchedulingIgnoredDuringExecution``` si concede che i pod abitino lo stesso nodo in un momento secondario, per esempio dopo un riavvio.
 
-## Prerequisiti
+### Prerequisiti
 - Minikube installato e funzionante
 - Kubectl installato e funzionante
 - Addon Ingress abilitato
