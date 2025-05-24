@@ -21,5 +21,4 @@ Then to start Minikube, run the following command in your terminal:
 ```bash
 minikube start --driver=docker
 ```
-<br>
 Then browse the examples and follow the instructions in each directory's README file.
