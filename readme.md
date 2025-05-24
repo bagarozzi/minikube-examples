@@ -16,7 +16,10 @@ Make sure the Docker Engine is running on your machine. You can check this by ru
 docker info
 ```
 If Docker is running, you should see information about your Docker installation. If not, start the Docker service.
+<br>
 Then to start Minikube, run the following command in your terminal:
 ```bash
 minikube start --driver=docker
 ```
+<br>
+Then browse the examples and follow the instructions in each directory's README file.
