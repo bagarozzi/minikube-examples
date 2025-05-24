@@ -2,7 +2,7 @@
 This repository contains examples of how to use Minikube to run Kubernetes clusters locally. 
 The various examples will demonstrate different features and components of Kubernetes by using Minikube, the local versioin of Kubernetes that can be run through Docker or other VM managers.
 
-### Installation
+## Installation
 To install Minikube, follow the instructions on the [Minikube installation page](https://minikube.sigs.k8s.io/docs/start/).
 
 Then install Kubectl, the Kubernetes command-line tool, by following the instructions on the [Kubectl installation page](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
