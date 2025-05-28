@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dogs-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-dogs
+  template:
+    metadata:
+      labels:
+        app: nginx-dogs
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25.2
+          ports:
+            - name: http
+              containerPort: 80

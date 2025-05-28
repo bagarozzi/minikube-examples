@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cats-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-cats
+  template:
+    metadata:
+      labels:
+        app: nginx-cats
+    spec:                       
+      containers:
+        - name: nginx
+          image: nginx:1.25.2
+          ports:
+            - name: http
+              containerPort: 80
