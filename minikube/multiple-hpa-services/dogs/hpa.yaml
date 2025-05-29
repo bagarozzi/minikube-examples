@@ -1,0 +1,29 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx
+spec: 
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: dogs-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics: # list of specifications to use to calculate the replica count
+    - type: Resource
+      resource: 
+        name: cpu
+        target: 
+          type: Utilization
+          averageUtilization: 50
+  behavior: # how the scaler behaves during the scaling
+    scaleDown:
+      stabilizationWindowSeconds: 300 # only in scaling down
+      selectPolicy: Max # upon scaling choose the policy that deletes the most number of pods
+      policies: # either remove 4 pods every minute or 10% of the pods
+      - type: Pods
+        value: 4
+        periodSeconds: 60
+      - type: Percent
+        value: 10
+        periodSeconds: 60

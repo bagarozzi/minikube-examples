@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cats-deployment
+spec:
+  # replicas: 3 It's reccomended to remove this number so there's no conflict with HPA
+  selector:
+    matchLabels:
+      app: nginx-cats
+  template:
+    metadata:
+      labels:
+        app: nginx-cats
+    spec:
+      volumes:
+        - name: cats-resources
+          configMap:
+            name: catsconfigmap               
+      containers:
+        - name: nginx
+          image: nginx:1.25.2
+          volumeMounts:
+            - name: cats-resources
+              mountPath: "/usr/share/nginx/html"
+          ports:
+            - name: http
+              containerPort: 80
