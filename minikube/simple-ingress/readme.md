@@ -2,6 +2,8 @@
 In this example we will deploy a simple web service. First we create a deployment and a service to create the pod and expose it to the cluster on port 80.
 Then we will create an ingress resource that will expose the service to the outside world on port 80. The host is ```www.example.com```.
 
+## Explanation
+
 ## Deployment of the service
 To deploy the service we apply the configuration and then open the minikube tunnel to expose the service on ```127.0.0.1```.
 ```bash
