@@ -5,7 +5,9 @@ Then we will create an ingress resource that will expose the service to the outs
 ## Explanation
 In this example a Pod is created hosting a simple nginx web server. The Pod is exposed to the rest of the cluster through a service of type ```ClusterIP```. This service is then exposed to the outside world through an Ingress resource. The Ingress resource is configured to route traffic to the service based on the host header.
 
-## Deployment of the service
+## Usage
+
+### Requirements and deployment
 To deploy the service we apply the configuration and then open the minikube tunnel to expose the service on ```127.0.0.1```.
 ```bash
 minikube addon enable ingress
@@ -13,7 +15,7 @@ kubectl apply -f .
 minikube tunnel
 ```
 
-## Verification of the deployment
+### Verification of the deployment
 To verify that the service is running we can use the following command:
 ```bash
 curl --resolve "www.example.com:80:127.0.0.1" -i http://www.example.com
