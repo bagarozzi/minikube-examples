@@ -5,7 +5,7 @@ The various examples will demonstrate different features and components of Kuber
 ## About the examples
 Each example is contained in its own directory, with a README file that explains how to run the example and what it does. Here's a list ordered by difficulty:
 - [Simple Ingress](minikube/simple-ingress/): Demonstrates how to set up Ingress routing and the usage of Services to expose applications on Pods.
-- [Simple Multinode]minikube/simple-multinode/): Shows how to deploy to a multi-node cluster using Minikube. A simple web application is deployed across the cluster. 
+- [Simple Multinode](minikube/simple-multinode/): Shows how to deploy to a multi-node cluster using Minikube. A simple web application is deployed across the cluster. 
 - [HPA Ingress](minikube/hpa-ingress/): Demonstrates how to set up Horizontal Pod Autoscaling (HPA) to automatically scale the number of Pods hosting a single application. 
 - [Multiple Ingress](minikube/multiple-ingress/): Shows how to route traffic to multiple services using Ingress.
 
