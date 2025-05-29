@@ -2,30 +2,6 @@
 In this example we will take advantage of the full potential of Ingress. Ingress can route different paths to different services. 
 Two web services will be created and routed to different paths on the same IP host (the cluster).
 
-## Usage
-Before running the example, make sure you have enabled the Ingress addon in Minikube:
-```bash
-minikube addons enable ingress
-```
-Then, apply the configuration files:
-```bash
-kubectl apply -f .
-```
-After applying the configuration, you can check the status of the services and Ingress:
-```bash
-kubectl get all
-```
-Then enable the tunnel to access the Ingress from outside the cluster:
-```bash
-minikube tunnel
-```
-Now you can request the web pages using the following command:
-```bash
-curl --resolve "www.animals.com:80:127.0.0.1" -i http://www.animals.com/cats
-# and
-curl --resolve "www.animals.com:80:127.0.0.1" -i http://www.animals.com/dogs
-```
-
 ## Exaplanation
 To differentiate the two services we will set different web pages that will be served, these are stored in the `web` directory.
 Two services and two configMaps are created, the configMaps are used to pass the web pages to the pods as configuration files (there are also other methods to do this, like using Volumes).
@@ -55,3 +31,31 @@ A key element in the Ingress' configuration is the `annotations` section, in whi
 <br>
 The resulting system will look like this:
 ![System diagram](diagram.jpg)
+
+## Usage
+
+### Prerequisites
+Before running the example, make sure you have enabled the Ingress addon in Minikube:
+```bash
+minikube addons enable ingress
+```
+
+### Deployment and verification
+Then, apply the configuration files:
+```bash
+kubectl apply -f .
+```
+After applying the configuration, you can check the status of the services and Ingress:
+```bash
+kubectl get all
+```
+Then enable the tunnel to access the Ingress from outside the cluster:
+```bash
+minikube tunnel
+```
+Now you can request the web pages using the following command:
+```bash
+curl --resolve "www.animals.com:80:127.0.0.1" -i http://www.animals.com/cats
+# and
+curl --resolve "www.animals.com:80:127.0.0.1" -i http://www.animals.com/dogs
+```
