@@ -12,9 +12,16 @@ spec:
       labels:
         app: nginx-dogs
     spec:
+      volumes:
+        - name: dogs-resources
+          configMap:
+            name: dogsconfigmap
       containers:
         - name: nginx
           image: nginx:1.25.2
+          volumeMounts:
+            - name: dogs-resources
+              mountPath: "/usr/share/nginx/html"
           ports:
             - name: http
               containerPort: 80

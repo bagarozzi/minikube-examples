@@ -11,10 +11,17 @@ spec:
     metadata:
       labels:
         app: nginx-cats
-    spec:                       
+    spec:
+      volumes:
+        - name: cats-resources
+          configMap:
+            name: catsconfigmap               
       containers:
         - name: nginx
           image: nginx:1.25.2
+          volumeMounts:
+            - name: cats-resources
+              mountPath: "/usr/share/nginx/html"
           ports:
             - name: http
               containerPort: 80
