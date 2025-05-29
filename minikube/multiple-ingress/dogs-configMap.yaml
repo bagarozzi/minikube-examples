@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dogsconfigmap
+data:
+  # file-like keys
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Dogs</title>
+    </head>
+    <body>
+      <h1>All About Dogs</h1>
+      <p>Dogs are loyal, friendly animals and make great companions. They come in many breeds and sizes.</p>
+      <img src="https://placedog.net/400/300" alt="A cute dog">
+      <p><a href="cats.html">Learn about cats</a></p>
+    </body>
+    </html>
+
