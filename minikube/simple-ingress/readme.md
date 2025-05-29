@@ -3,6 +3,7 @@ In this example we will deploy a simple web service. First we create a deploymen
 Then we will create an ingress resource that will expose the service to the outside world on port 80. The host is ```www.example.com```.
 
 ## Explanation
+In this example a Pod is created hosting a simple nginx web server. The Pod is exposed to the rest of the cluster through a service of type ```ClusterIP```. This service is then exposed to the outside world through an Ingress resource. The Ingress resource is configured to route traffic to the service based on the host header.
 
 ## Deployment of the service
 To deploy the service we apply the configuration and then open the minikube tunnel to expose the service on ```127.0.0.1```.
