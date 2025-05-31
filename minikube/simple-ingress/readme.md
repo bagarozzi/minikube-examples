@@ -11,7 +11,7 @@ In this example a Pod is created hosting a simple nginx web server. The Pod is e
 To deploy the service we apply the configuration and then open the minikube tunnel to expose the service on ```127.0.0.1```.
 ```bash
 minikube addon enable ingress
-kubectl apply -f .
+kubectl apply -f manifest
 minikube tunnel
 ```
 
