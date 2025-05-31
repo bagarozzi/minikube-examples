@@ -43,7 +43,7 @@ minikube addons enable ingress
 ### Deployment and verification
 Then, apply the configuration files:
 ```bash
-kubectl apply -f .
+kubectl apply -R -f .
 ```
 After applying the configuration, you can check the status of the services and Ingress:
 ```bash
