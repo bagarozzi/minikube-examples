@@ -53,3 +53,9 @@ After that, you can access the service with the command:
 ```bash
 curl --resolve "www.example.com:80:127.0.0.1" -i http://www.example.com
 ```
+
+### Cleaning up
+To clean up use the `cleanup.sh` in the `scripts` directory:
+```bash
+./cleanup.sh
+```
