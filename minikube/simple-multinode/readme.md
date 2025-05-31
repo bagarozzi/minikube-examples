@@ -30,7 +30,7 @@ minikube status -p multinode-demo
 ### Deployment
 To create the cluster, run the following command:
 ```bash
-kubectl apply -f .
+kubectl apply -f manifests/
 ```
 
 ### Verifying the Deployment
