@@ -22,7 +22,7 @@ wait a couple of minutes for the metrics server to be up.
 
 ### Create the deployment
 ```bash
-kubectl apply -f hpa-ingress/
+kubectl apply -f manifests
 ```
 Then check the status of the deployment with the usual commands.
 
