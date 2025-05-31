@@ -25,7 +25,7 @@ kubectl top nodes
 ```
 Apply the configuration files, the `-R` option will recursively search for files in the current directory:
 ```bash
-kubectl apply -R -f .
+kubectl apply -R -f manifests
 ```
 
 ### Verification of the deployment
