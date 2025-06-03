@@ -15,6 +15,7 @@ In Kubernetes you can combine the various components in each example to create m
 
 ## Installation
 To install Minikube, follow the instructions on the [Minikube installation page](https://minikube.sigs.k8s.io/docs/start/).
+Follow the instructions for downloading and installing Minikube, the installation page contains various useful commands for Kubectl and Minikube. You can also follow the examples included in the page.
 
 Then install Kubectl, the Kubernetes command-line tool, by following the instructions on the [Kubectl installation page](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
