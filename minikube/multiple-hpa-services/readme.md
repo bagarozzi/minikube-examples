@@ -4,6 +4,9 @@ In this example we deploy two services, as in the [multiple service ingress](../
 ## Explanation
 Horizontal Pod Autoscalers are used to automatically scale the number of pods in a deployment based on resouces utilization, such as CPU or memory. In the container's configuration is mandatory to add resources' requests and limits so that the HPA knows the limit with which to scale the pods. Moreover the requests and limits are used by Kubernetes to schedule the pods on the right nodes, so that the pods are not scheduled on nodes that do not have enough resources to run them. If a pod exceeds the limit is terminated.
 
+The resulting system will look like this:
+![System diagram](diagram.jpg)
+
 ## Usage
 
 ### Requirementes and deployment
