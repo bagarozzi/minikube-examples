@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: hello
 spec:
-  selector:
+  selector: # All the pods with this label will be included in the Service
     app: hello
   ports:
     - port: 80
