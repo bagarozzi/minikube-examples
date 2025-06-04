@@ -3,12 +3,16 @@ kind: Ingress
 metadata:
   name: nginx
   annotations:
+    # Annotations are different for each Ingress Controller
+    # Upon redirecting the path is rewritten to root otherwise the 
+    # request would be for the "path" indicated.
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec: 
   rules:
-    - host: www.animals.com
+    - host: www.animals.com # Set the hostname
       http:
         paths:
+          # For "/dogs" the traffic will be routed to the dogs' service
           - path: /dogs
             pathType: Prefix
             backend:
@@ -16,6 +20,7 @@ spec:
                 name: dogs-service
                 port:
                   number: 80
+          # For "/cats" the traffic will be routed to the cats' service
           - path: /cats
             pathType: Prefix
             backend:

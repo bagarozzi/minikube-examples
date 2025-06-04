@@ -4,9 +4,10 @@ metadata:
   name: nginx
 spec: 
   rules:
-    - host: www.example.com
+    - host: www.example.com # Set the hostname
       http:
         paths:
+          # For this specific path redirect traffic to the "hello" Service
           - path: /
             pathType: Prefix
             backend:
