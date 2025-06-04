@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: dogs-service
 spec:
-  selector:
+  selector: # All the pods with this label will be included in the Service
     app: nginx-dogs
   ports: 
+    # The Pod's port 80 will be mapped to the Service's 80 port
     - port: 80
       targetPort: http
 ---
@@ -14,8 +15,9 @@ kind: Service
 metadata:
   name: cats-service
 spec:
-  selector:
+  selector: # All the pods with this label will be included in the Service
     app: nginx-cats
   ports: 
+    # The Pod's port 80 will be mapped to the Service's 80 port
     - port: 80
       targetPort: http

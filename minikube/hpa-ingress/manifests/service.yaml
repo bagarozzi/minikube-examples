@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  selector:
+  selector: # All the pods with this label will be included in the Service
     app: nginx
   ports: 
     - port: 80
