@@ -20,7 +20,9 @@ To verify that the service is running we can use the following command:
 ```bash
 curl --resolve "www.example.com:80:127.0.0.1" -i http://www.example.com
 ```
-This command is needed because in Minikube every service is exposed on ```localhost``` therefore the Ingress controller can't route correctly to the service requested. This command puts inside the HTTP header the requested path.
+This command is needed for two reasons:
+- To bypass the local DNS 
+- Because in Minikube every service is exposed on ```localhost``` therefore the Ingress controller can't route correctly to the service requested. This command puts inside the HTTP header the requested path. 
 It will return a response like this:
 ```
 HTTP/1.1 200 OK
