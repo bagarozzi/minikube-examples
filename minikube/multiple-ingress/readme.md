@@ -3,7 +3,7 @@ In this example we will take advantage of the full potential of Ingress. Ingress
 Two web services will be created and routed to different paths on the same IP host (the cluster).
 
 ## Exaplanation
-To differentiate the two services we will set different web pages that will be served, these are stored in the `web` directory.
+To differentiate the two services we will set different web pages that will be served, these are stored in configMaps and then passed to the Pods as configuration files.
 Two services and two configMaps are created, the configMaps are used to pass the web pages to the pods as configuration files (there are also other methods to do this, like using Volumes).
 Finally the Ingress is set up to route the requests to the correct service based on the path.
 ```yaml
@@ -31,6 +31,32 @@ A key element in the Ingress' configuration is the `annotations` section, in whi
 <br>
 The resulting system will look like this:
 ![System diagram](diagram.jpg)
+<br>
+Alternatively, one can use name-based virtual hosting to route multiple host names to the same IP.
+```yaml
+  rules:
+  - host: dogs.animals.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: dogs-service
+            port:
+              number: 80
+  - host: cats.animals.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: cats-service
+            port:
+              number: 80
+```
+Check the [documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#types-of-ingress) for all the types of Ingress that can be deployed.
 
 ## Usage
 
