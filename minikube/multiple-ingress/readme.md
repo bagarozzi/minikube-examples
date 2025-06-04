@@ -59,3 +59,8 @@ curl --resolve "www.animals.com:80:127.0.0.1" -i http://www.animals.com/cats
 # and
 curl --resolve "www.animals.com:80:127.0.0.1" -i http://www.animals.com/dogs
 ```
+### Cleaning up
+To clean up use the `cleanup.sh` in the `scripts` directory:
+```bash
+./cleanup.sh
+```
