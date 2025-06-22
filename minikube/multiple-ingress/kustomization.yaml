@@ -1,0 +1,7 @@
+resources:
+  manifests/dogs/dogs-configMap.yaml
+  manifests/cats/cats-configMap.yaml
+  manifests/dogs/dogs-deployment.yaml
+  manifests/cats/cats-deployment.yaml
+  manifests/services.yaml
+  manifests/ingress.yaml
