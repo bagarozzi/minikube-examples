@@ -7,6 +7,9 @@ metadata:
     # Upon redirecting the path is rewritten to root otherwise the 
     # request would be for the "path" indicated.
     nginx.ingress.kubernetes.io/rewrite-target: /
+    # Declare which Ingress controller must manage this Ingress resource.
+    # Remove this line if the ingress is not working or you are using a controller
+    # different than Nginx
     kubernetes.io/ingress.class: "nginx"
 spec: 
   rules:
